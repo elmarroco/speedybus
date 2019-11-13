@@ -1,11 +1,11 @@
 <?php
 require_once('../Model/ConnectDb.php');
-$key = $_POST['key'];
+// $key = $_POST['key'];
 
 $sql = "SELECT origen FROM itinerario WHERE
     origen LIKE 'ta%'";
     
-$result = $instance->query($conn, $sql);
+$result = $instance->query($sql);
 $origenes = $instance->fetchArray($result);
 
 $html = "";

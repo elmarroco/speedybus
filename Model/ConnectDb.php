@@ -6,9 +6,9 @@ class ConnectDb
   private static $instance = null;
   private $conn;
 
-  private $host = 'localhost';
-  private $user = 'root';
-  private $pass = '';
+  private $host = 'db4free.net';
+  private $user = 'speedybus';
+  private $pass = 'speedybus19p';
   private $name = 'speedybus';
 
   // The db connection is established in the private constructor.
@@ -40,9 +40,9 @@ class ConnectDb
     return $this->conn;
   }
 
-  public function query($pdo, $query, $params = [])
+  public function query($query, $params = [])
   {
-    $stmt = $pdo->prepare($query);
+    $stmt = $this->conn->prepare($query);
     $stmt->execute($params);
     return $stmt;
   }
@@ -61,9 +61,9 @@ class ConnectDb
   {
     return $result->rowCount();
   }
-  public function lastInsertedId($pdo)
+  public function lastInsertedId()
   {
-    return $pdo->lastInsertId();
+    return $this->conn->lastInsertId();
   }
 }
 
