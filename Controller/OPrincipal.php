@@ -1,9 +1,9 @@
 <?php
 class OPrincipal
 {
-  public static function DesplegarGUIPrincipal()
+  public static function DesplegarGUIPrincipalGeneral()
   {
-    require_once('View/GUIGenerales/GUIPrincipal.php');
+    require_once('View/GUIGenerales/GUIPrincipalGeneral.php');
   }
   public static function StartListening()
   {
